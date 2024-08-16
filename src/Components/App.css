@@ -1,0 +1,795 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav {
+  width: 100vw;
+  height: 20vh;
+  border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white; /* Default background color */
+  transition: background-color 0.3s ease; /* Smooth transition for nav background color */
+}
+
+.dark-mode .nav {
+  background-color: rgb(44, 54, 63); /* Dark mode background color for nav */
+}
+
+.dark-mode body {
+  background-color: rgb(44, 54, 63); /* Dark mode background color for body */
+}
+
+.dark-mode .second-list
+{
+   background-color:  rgb(74, 83, 91);
+   height: 6vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.dark-mode h1,
+.dark-mode h3,
+.dark-mode p {
+  color: white; /* Text color in dark mode */
+}
+
+.menu-list a {
+  color: black;
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+.dark-mode .menu-list a {
+  color: white; /* Link color in dark mode */
+}
+
+.dark-mode .main-part-3 h1 {
+  color: white; /* Change color to white in dark mode */
+}
+.dark-mode .main-part-3 h5 {
+  color: white; /* Change color to white in dark mode */
+}
+.dark-mode .main-part-3 .course{
+background-color: rgb(74, 83, 91);
+}
+
+.dark-mode .tutor
+{
+  background-color: rgb(74, 83, 91);
+}
+.dark-mode .footer{
+  background-color: rgb(74, 83, 91);
+}
+.firstrow {
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  padding: 0 2vw;
+  align-items: center;
+  position: relative;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.name h4 {
+  color: blueviolet;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 1vw;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: blueviolet;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  width: 25px;
+  background: blueviolet;
+  margin: 4px 0;
+}
+
+/* Styles for the button and toggle */
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  width: 6vw;
+  height: 5vh;
+  background-color: blueviolet;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.3vw;
+  text-align: center;
+  margin-left: 1vw;
+  transition: none; /* Disable any transition effect */
+}
+
+/* Ensure no hover effect */
+.btn:hover {
+  background-color: blueviolet; /* Keep the same background color on hover */
+  color: white; /* Keep the same text color on hover */
+  /* No other styles should change */
+}
+.toggle {
+  margin-left: 1vw;
+  border-radius: 0.3vw;
+  width: 6vw;
+  height: 5vh;
+  border: 0.5vw solid blueviolet;
+}
+
+.secondrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.second-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.second-list li a {
+  text-decoration: none;
+  color: rgb(148, 113, 180);
+  margin: 0 0.8vw;
+}
+
+#toggle-img {
+  width: 2vw;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav {
+    height: auto;
+  }
+
+  .firstrow {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .name {
+    width: 100%;
+    text-align: left;
+    padding-left: 2vw;
+  }
+
+  .menu-list {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+    display: none;
+  }
+
+  .menu-list.visible {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  
+  .btns {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1vh;
+  }
+
+  .btn {
+    width: 50%;
+    margin: 0.5vh 1vw;
+    border-radius: 0.5vw;
+    font-size: 0.7rem;
+  }
+
+  .toggle {
+    width: 12vw;
+    height: 5vh;
+    border: 0.5vw solid blueviolet;
+    border-radius: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #toggle-img {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .btns {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1vh;
+  }
+
+  .btn {
+    width: 30%;
+    margin: 0.5vh 1vw;
+    border-radius: 0.5vw;
+    font-size: 0.7rem;
+  }
+
+  .toggle {
+    width: 12vw;
+    height: 5vh;
+    border: 0.5vw solid blueviolet;
+    border-radius: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #toggle-img {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.main-sec
+{
+   display: flex;
+   justify-content: space-between;
+   margin: 6vw  3vw;
+  
+  
+}
+
+.main-part-1 h1
+{
+   font-weight: bold;
+}
+.main-part-1 h3
+{
+   font-family: ' sans-serif';
+   
+}
+.main-part-1 span
+{
+   color: blueviolet;
+   
+}
+.main-part-1 p
+{
+   width: 80%;
+}
+.buttons button
+{
+   width: 8vw;
+   height: 6vh;
+   background-color: blueviolet;
+   color: white;
+   font-weight: bold;
+   border: none;
+   margin: 1vw;
+   border-radius: 0.3vw;
+}
+#part2Img
+{
+    width:42vw;
+    height: 60vh;
+    border: 1vw solid blueviolet;
+    border-radius: 0.5vw;
+}
+@media (max-width: 768px) { /* Tablets */
+  .main-sec {
+    flex-direction: column;
+    align-items: center;
+    margin: 4vw 1vw; /* Adjust margins for tablets */
+  }
+.main-part-1 h2
+{
+   text-align: left;
+   
+}
+  .main-part-1, .main-part-2 {
+    width: 100%;
+    text-align: left; /* Center text in the container */
+  }
+
+  #part2Img {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+    border: 1vw solid blueviolet;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .buttons button {
+    width: 30vw;
+    height: 6vh; 
+    border-radius: 0.5vw;
+    margin-left: 2vw;
+    margin-bottom: 2vw;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile screens */
+  .main-sec {
+    margin: 2vw 1vw; /* Adjust margins for mobile screens */
+  }
+
+  .main-part-1, .main-part-2 {
+    width: 100%;
+  }
+
+  #part2Img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border: 1vw solid blueviolet;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center; /* Center align buttons */
+  }
+
+  .buttons button {
+    width: 30vw;
+    height: 6vh; 
+    border-radius: 0.5vw;
+    margin-left: 2vw;
+  }
+}
+
+.main-part-3
+{
+   margin-top: 20vh;
+}
+
+.main-part-3 h1
+{
+   font-size: 4rem;
+   font-weight: bold;
+   text-align: center;
+   color: rgb(64, 28, 98);
+}
+
+.courses-details
+{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 4vw;
+}
+.course
+{
+   width: 21vw;
+   height: 60vh;
+   background-color: rgb(205, 205, 205);
+   border-radius: 1vw;
+   box-shadow: 0 0  1vw rgba(0, 0, 0, 0.2);
+}
+
+#course-imgs
+{
+   margin: 2vw;
+   border-radius: 1vw;
+   width: 17vw;
+   height: 24vh;
+}
+#course-img
+{
+   margin: 1vw;
+   border-radius: 1vw;
+   width: 10vw;
+   height: 28vh;
+}
+
+
+
+.course h5
+{
+   font-weight: bold;
+   margin-left: 1vw;
+}
+.course p{
+  margin-left: 2vw;
+  width: 18vw;
+}
+.course button
+{
+   width: 17vw;
+   height: 6vh;
+   border: none;
+   border-radius: 0.5vw;
+   background-color: blueviolet;
+   color: white;
+   font-weight: bold;
+   font-size: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 2vw;
+}
+
+@media (max-width: 1024px) {
+  .main-part-3 {
+      margin-top: 10vh;
+  }
+
+  .main-part-3 h1 {
+      font-size: 3rem;
+  }
+
+  .courses-details {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .course {
+      width: 80%;
+      height: auto;
+      margin: 2vw 0;
+  }
+
+  #course-imgs,
+  #course-img {
+      width: 80%;
+      height: auto;
+  }
+}
+
+/* Responsive styles for mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .main-part-3 {
+      margin-top: 5vh;
+  }
+
+  .main-part-3 h1 {
+      font-size: 2.5rem;
+  }
+
+  .courses-details {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .course {
+      width: 90%;
+      height: auto;
+      margin: 2vw 0;
+  }
+
+  #course-imgs,
+  #course-img {
+      width: 90%;
+      height: auto;
+  }
+}
+
+/* Responsive styles for extra small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .main-part-3 {
+      margin-top: 3vh;
+  }
+
+  .main-part-3 h1 {
+      font-size: 2rem;
+  }
+
+  .courses-details {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .course {
+      width: 80%;
+      height: auto;
+      margin: 2vw 0;
+  }
+ .course p
+ {
+    width: 65%;
+ }
+ .course button
+ {
+    width: 35%;
+    margin-bottom: 2vw;
+ }
+  #course-imgs
+   {
+      width: 85%;
+     margin-left: 5.5vw;
+     margin-top: 3vh;
+      height: auto;
+  }
+  #course-img
+  {
+    width: 50%;
+    margin-left: 5.5vw;
+    margin-top: 3vh;
+     height: auto;
+  }
+}
+
+.main-part-4 {
+  margin-top: 30vh;
+}
+
+.main-part-4 h1 {
+  font-size: 5rem;
+  color: rgb(68, 21, 112);
+  text-align: center; /* Center-align the heading */
+}
+
+.tutors {
+  margin: 10vh 5vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+}
+
+.tutor {
+  width: 22vw;
+  height: auto; /* Set a fixed height for the tutor div to control layout */
+  background-color: rgb(205, 205, 205);
+  border-radius: 1vw;
+  position: relative; /* Establish a relative positioning context for the image */
+   /* Hide overflowing parts of the image */
+   box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.2);
+  
+}
+
+#tutor-img {
+  position: absolute;
+  top: -1%; /* Position the top of the image at the midpoint of the tutor div */
+  left: 50%; /* Center the image horizontally */
+  transform: translate(-50%, -50%); /* Shift the image up by 50% of its height and left by 50% of its width */
+  width: 6vw;
+  height: 13vh;
+  border-radius: 50%;
+  border: 0.3vw solid white;
+}
+
+.tutor  p
+{
+   width: 85%;
+   margin: 4vw 0.3vw 2.2vw 2.2vw;
+   
+}
+.tutor-name  h5
+{
+   text-align: center;
+   font-weight: bold;
+   margin: 0;
+}
+
+.tutor-name p
+{
+   text-align: center;
+   margin: 0;
+   margin-left: 2vw;
+   margin-bottom: 0.5vw;
+}
+
+
+@media (max-width: 1024px) {
+  .main-part-4 h1 {
+    font-size: 4rem;
+  }
+
+  .tutors {
+    margin: 5vh 2.5vh;
+    justify-content: center;
+  }
+
+  .tutor {
+    width: 60%; /* Adjust width for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 1vw; /* Adjust padding for smaller screens */
+  }
+  .tutor p 
+  {
+     margin-top: 10vw;
+     margin-left: 7vw;
+  }
+
+  .tutor-name p
+  {
+     margin: 0;
+     margin-left: 6vw;
+  }
+
+  #tutor-img {
+    width: 8vw; /* Increase image size for better visibility */
+    height: 15vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-part-4 h1 {
+    font-size: 3rem;
+  }
+
+  .tutors {
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh 2vw; /* Adjust margins for better spacing */
+  }
+
+  .tutor {
+    width: 80%; /* Further adjust width for mobile screens */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 2vw; /* Adjust padding for mobile screens */
+  }
+
+  #tutor-img {
+    width: 10vw; /* Adjust image size for mobile screens */
+    height: 18vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-part-4 h1 {
+    font-size: 2.5rem;
+  }
+
+  .tutors {
+    flex-direction: column;
+    align-items: center;
+    margin: 15vh 1vw; /* Adjust margins for very small screens */
+  }
+
+  .tutor {
+    width: 90%; /* Maximize width for small screens */
+    height: auto; /* Allow height to adjust based on content */
+   margin-bottom: 20vw; /* Maintain padding */
+  }
+
+  #tutor-img {
+    width: 15vw; /* Increase image size for very small screens */
+    height: 15vh;
+  }
+}
+
+.footer
+{
+   width: 100vw;
+   height: 10vh;
+   background-color: rgb(205, 205, 205) ;
+   display: flex; 
+   justify-content: space-between;
+   align-items: center; 
+
+}
+.footer p 
+{
+ margin-left: 5vw;
+}
+
+.social-links
+{
+   margin-right: 5vw;
+ 
+}
+.social-link
+{
+   width: 3vw;
+   height: 5vh;
+  margin: 0;
+  
+}
+
+@media (max-width: 1024px) {
+  .footer {
+     height: auto; /* Adjust height for smaller screens */
+     flex-direction: column; /* Stack items vertically */
+     align-items: center; /* Center items horizontally */
+     padding: 2vw; /* Adjust padding */
+  }
+
+  .footer p {
+     margin-bottom: 2vh; /* Space below text */
+     font-size: 1.2rem; /* Slightly larger font size */
+  }
+
+  .social-links {
+     margin-top: 1vh; /* Space above social links */
+  }
+
+  .social-link {
+     width: 4vw; /* Increase size for better visibility */
+     height: 6vh;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  .footer {
+     height: auto; /* Allow height to adjust based on content */
+     flex-direction: column; /* Stack items vertically */
+     align-items: center; /* Center items horizontally */
+     padding: 2vw; /* Adjust padding */
+  }
+
+  .footer p {
+     margin-bottom: 2vh; /* Space below text */
+     font-size: 1.5rem; /* Larger font size for mobile */
+  }
+
+  .social-links {
+     margin-top: 2vh; /* Space above social links */
+  }
+
+  .social-link {
+     width: 5vw; /* Larger size for easier interaction */
+     height: 7vh;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .footer {
+     padding: 1.5vw; /* Smaller padding for very small screens */
+  }
+
+  .footer p {
+     margin-bottom: 2vh; /* Space below text */
+     font-size: 1.2rem; /* Adjust font size */
+  }
+
+  .social-links {
+     margin-top: 2vh; /* Space above social links */
+  }
+
+  .social-link {
+     width: 6vw; /* Increase size for very small screens */
+     height: 7vh;
+  }
+}
+
